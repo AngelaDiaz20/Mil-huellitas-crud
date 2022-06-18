@@ -1,0 +1,398 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --blue-dark-color: #1B3C5A;
+    --blue-medium-color: #2970CA;
+    --blue-light: #D5E3FF;
+    --green-light-color: #C4EDB2;
+    --coral-color: #FAC0BD;
+    --dark-color: #191919;
+    --white-color: #FFFFFF;
+    --aleo-font: "Aleo", serif;
+    --poppins-font: "Poppins", sans-serif;
+    --Degrade-nav-menu-color: linear-gradient(180deg, rgba(7, 36, 62, 0.9) 32.33%, rgba(42, 95, 145, 0.9) 92.71%);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--poppins-font);
+}
+
+body{
+  margin: auto;
+  overflow-x: hidden;
+}
+
+h1, h2{
+  font-family: 'Aleo', serif;
+  color: var(--blue-medium-color);
+  text-align: center;
+}
+
+
+@media (min-width:1024px) {
+    body{
+      font-size: 20px;
+    }
+}
+
+.presentation{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.adoption{
+    width: 100%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.adoption h1{
+    margin:12px 0;
+    font-size: 30px;
+}
+
+.adoption p{
+    margin: 20px;
+    text-align: justify;
+}
+
+.adoption-galery, .row{
+    overflow-x: hidden;
+    margin-top: 20px;
+    display: grid;
+    row-gap: 15px;
+    grid-template-columns: 50% 50% 50% 50%;
+    overflow: hidden;
+    overflow-x: scroll;
+    scroll-snap-type:mandatory;
+    background: url(../../assets/adopcion/img/bg-bolitas.svg);
+    background-size: cover;
+}
+
+.adoption-galery__pet{
+    display: flex;
+    flex-direction: column;
+    border: 4px solid #296fcac1;
+    border-radius: 5px;
+    width: 95%;
+    margin: auto;
+    height: 270px;
+    box-shadow: 1px 2px 8px #000000aa;
+    background-color: #ffffff98;
+    backdrop-filter: blur(4px);
+    animation: pet-aparecer 600ms;
+    transition-duration: 100ms;
+}
+
+.adoption-galery__pet img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid var(--dark-color);*/
+    transition: all 500ms ease-out;
+}
+
+.adoption-galery__image{
+    height: 100%;
+    margin-top: -25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.adoption-galery__layer{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 3, 124, 0.54);
+    color: white;
+    transition: all 500ms ease-out;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+    /*border-radius: 10px 10px 0 0;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.adoption-galery__information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+}
+
+@keyframes pet-aparecer{
+    0%{
+        transform: translateY(-10px);
+        opacity: 0.3;
+        transform: scale(0.8)
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.adoption-galery__pet:hover{
+    box-shadow: 2px 3px 8px var(--blue-dark-color);
+}
+
+.adoption-galery__pet:hover img{
+    transform: scale(1.1);
+}
+
+.adoption-galery__pet:hover .adoption-galery__image>.adoption-galery__layer{
+    opacity: 1;
+    visibility: visible;
+}
+
+.adoption-galery__pet .adoption-galery__layer .link{
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 2px black;
+    text-align: center;
+    cursor: pointer;
+    transition: all 1s 600ms ease-out;
+    text-decoration: none;
+}
+
+.adoption-galery__pet:hover .link{
+    animation: aparecer 800ms forwards;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0.2;
+        margin-top: 100%;
+      }
+
+      25%{
+        color: blueviolet;
+      }
+    
+      100% {
+        transform: scale(1.2);
+      }
+}
+
+.filter-buttons{
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    width: 90%;
+}
+
+
+.adoption-container button{
+    background-color: var(--blue-medium-color);
+    color: var(--white-color);
+    padding: 5px 20px;
+    border-radius: 10px;
+    border: none;
+    transition-duration: 400ms;
+}
+
+.adoption-container button:hover{
+    box-shadow: 1px 1px 3px var(--dark-color);
+    background-color: var(--blue-dark-color);
+    color: rgb(255, 255, 255);
+}
+
+.adoption-galery__information p{
+    margin-bottom: 0;
+}
+
+.pet__name{
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--blue-dark-color);
+}
+
+.line-dashed{
+    margin: auto;
+    width: 95%;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+/*Checked-------
+
+.filter-buttons{
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    width: 90%;
+}
+
+.line-dashed{
+    margin: auto;
+    width: 95%;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+.adoption-container label{
+    background-color: var(--blue-medium-color);
+    color: var(--white-color);
+    padding: 5px 20px;
+    border-radius: 10px;
+    border: none;
+}
+
+.adoption-container label:hover{
+    box-shadow: 1px 1px 3px var(--dark-color);
+    background-color: #8caef1;
+    color: black;
+}
+
+#perros:checked ~ .adoption-galery .cat{
+    display: none;
+}
+
+#perros:checked ~ .label-dog{
+    background-color: #1B3C5A;
+    color: white;
+}
+
+#gatos:checked ~ .label-cat{
+    background-color: #1B3C5A;
+    color: white;
+}
+
+#todos:checked ~ .label-todos{
+    background-color: #1B3C5A;
+    color: white;
+}
+
+#gatos:checked ~ .adoption-galery .dog{
+    display: none;
+}
+
+.adoption-container input[type=radio]{ 
+    display: none;
+}*/
+
+
+.controller{
+    margin-top: 15px;
+    font-size: 45px;
+    color: var(--blue-dark-color);
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (min-width: 450px){
+    .adoption-galery__pet{
+        width: 80%;
+    }
+}
+
+
+@media screen and (min-width: 768px){
+
+    .adoption-galery__pet{
+        width: 80%;
+    }
+
+    /*Adopción-----------------------*/
+
+    .filter-buttons{
+        justify-content: space-around;
+        width: 80%;
+    }
+
+    .adoption-container label{
+        padding: 5px 40px;
+    }
+
+    .adoption-galery__information{
+        font-size: 16px;
+    }
+
+    .adoption-galery, .row{
+        row-gap: 15px;
+        grid-template-columns: 25% 25% 25% 25%;
+        overflow: hidden;
+        overflow-x: hidden;
+        scroll-snap-type:none;
+    }
+    
+    .adoption-galery__pet{
+        width: 90%;
+        margin: auto;
+        height: 270px;
+    }
+
+    .controller{
+        display: none;
+    }
+ }
+ 
+ @media screen and (min-width: 1024px){
+
+    /*Adopción*/
+
+    .adoption p{
+        margin: 10px 60px;
+        text-align: center;
+        padding: 0 40px;
+    }
+
+    .adoption h1{
+        font-size: 40px;
+    }
+
+    .adoption-galery, .row{
+        padding: 0 80px;
+        margin: 0;
+    }
+
+    .adoption-galery, .row{
+        display: grid;
+        row-gap: 15px;
+    } 
+
+    .adoption-galery__pet{
+        /*border: 8px solid #296fcac1;
+        border-radius: 17px;*/
+        width: 90%;
+        margin: auto;
+        height: 300px;
+    }
+
+    .adoption-galery__image{
+        margin-top: -30px;
+    }
+
+    .adoption-container button{
+        padding: 5px 40px;
+        font-size: 20px;
+    }
+
+ }
+ 
+ @media screen and (min-width: 1200px){
+
+    /*Adoption----------------------*/
+    .adoption-galery__pet{
+        width: 90%;
+        margin: auto;
+        height: 380px;
+    }
+
+    .adoption-galery__information{
+        padding: 5px;
+        font-size: 18px;
+    }
+
+
+ }

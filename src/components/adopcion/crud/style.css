@@ -1,0 +1,31 @@
+.container-all{
+    color: pink;
+    width: 100%;
+}
+
+.container-crud{
+    display: contents;
+    width: 100%;
+    color: black;
+    background-color: black;
+}
+
+.container-crud .adoption-galery__pet{
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+.container-crud .adoption-galery__pet img{
+    object-fit: cover;
+}
+
+.buttons-crud{
+    display: flex;
+    margin: auto;
+    width: 90%;
+}
+
+.buttons-crud button{
+    width: 40%;
+    margin: 10px;
+}
